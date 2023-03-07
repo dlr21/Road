@@ -39,6 +39,13 @@ public class SonidoEntreEscenas : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        musicaSlider.value=PlayerPrefs.GetFloat("MusicVolume", musicaSlider.value);
+        efectosSlider.value = PlayerPrefs.GetFloat("SFXVolume", efectosSlider.value);
+    }
+
+
     public void CambiarVolumenMusica() {
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicaSlider.value) *20);
     }
@@ -46,6 +53,12 @@ public class SonidoEntreEscenas : MonoBehaviour
     public void CambiarVolumenEfectos()
     {
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(efectosSlider.value) * 20);
+    }
+
+    public void OnBackOptions()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", musicaSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", efectosSlider.value);
     }
 
 }

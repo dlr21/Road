@@ -27,6 +27,11 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("DarkScene");
     }
 
+    public void Caos()
+    {
+        SceneManager.LoadScene("ClassicScene");
+    }
+
     public void PlayMenu() {
         firstMenu.SetActive(false);
         playMenu.SetActive(true);

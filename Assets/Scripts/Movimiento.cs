@@ -17,7 +17,7 @@ public class Movimiento : MonoBehaviour
     public Mundo mundo;
     public Transform grafico;
 
-    public LayerMask obstaculos;
+    public LayerMask obstaculos;//suelo
     public LayerMask agua;
     private float distanciaVista = 1f;
     private float escalaInicial = 0.8f;
