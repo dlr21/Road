@@ -29,7 +29,7 @@ public class StartMenu : MonoBehaviour
 
     public void Caos()
     {
-        SceneManager.LoadScene("ClassicScene");
+        SceneManager.LoadScene("CaosScene");
     }
 
     public void PlayMenu() {

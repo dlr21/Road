@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int puntuacion;
 
     public bool vivo = true;
+    public bool pausado = false;
 
     private void Start()
     {
@@ -23,6 +24,10 @@ public class Player : MonoBehaviour
 
     public void AumentarPuntos() {
         puntuacion += 10;
+    }
+
+    public int getPuntos() {
+        return puntuacion;
     }
 
 }

@@ -31,7 +31,7 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
-        if (!pl.vivo)
+        if (!pl.vivo || pl.pausado)
         {
             return;
         }

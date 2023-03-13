@@ -8,7 +8,7 @@ public class DevolverCoche : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coche")) {
-            other.transform.Translate(0, 0, 35);
+            other.transform.parent.gameObject.transform.Translate(0, 0, -35);
         }
     }
 

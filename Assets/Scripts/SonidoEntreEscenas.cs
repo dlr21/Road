@@ -18,9 +18,8 @@ public class SonidoEntreEscenas : MonoBehaviour
     [SerializeField] private AudioMixerGroup musicGroup;
     [SerializeField] private AudioMixerGroup sfxGroup;
 
-    
-    public Slider musicaSlider;
-    public Slider efectosSlider;
+    [SerializeField] private Slider musicaSlider;
+    [SerializeField] private Slider efectosSlider;
 
     void Awake()
     {
