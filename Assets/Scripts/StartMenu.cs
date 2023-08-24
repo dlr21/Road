@@ -13,6 +13,7 @@ public class StartMenu : MonoBehaviour
 
     private void Start()
     {
+        //firstMenu.SetActive(true);
         playMenu.SetActive(false);
         optionsMenu.SetActive(false);
     }
@@ -43,6 +44,7 @@ public class StartMenu : MonoBehaviour
         firstMenu.SetActive(false);
         playMenu.SetActive(false);
         optionsMenu.SetActive(true);
+        GameObject.Find("SonidoPermanente").GetComponent<SonidoEntreEscenas>().setAudioSliders();
     }
 
     public void backPlay()

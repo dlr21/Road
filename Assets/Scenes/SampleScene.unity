@@ -2108,6 +2108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntuacion: 0
   vivo: 1
+  pausado: 0
 --- !u!54 &485027916
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3485,8 +3486,8 @@ MonoBehaviour:
     type: 2}
   sfxGroup: {fileID: -785642950713994829, guid: 5d1a3e2990abb474ca04525d1f0b1abf,
     type: 2}
-  musicaSlider2: {fileID: 1951711413}
-  efectosSlider2: {fileID: 1867282298}
+  musicaSlider: {fileID: 0}
+  efectosSlider: {fileID: 0}
 --- !u!4 &847588388
 Transform:
   m_ObjectHideFlags: 0
@@ -7475,19 +7476,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 847588387}
-        m_TargetAssemblyTypeName: SonidoEntreEscenas, Assembly-CSharp
-        m_MethodName: CambiarVolumenEfectos
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1889350055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,19 +7807,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 847588387}
-        m_TargetAssemblyTypeName: SonidoEntreEscenas, Assembly-CSharp
-        m_MethodName: CambiarVolumenMusica
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1960381304
 GameObject:
   m_ObjectHideFlags: 0

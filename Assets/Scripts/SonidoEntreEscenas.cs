@@ -20,9 +20,10 @@ public class SonidoEntreEscenas : MonoBehaviour
 
     [SerializeField] private Slider musicaSlider;
     [SerializeField] private Slider efectosSlider;
-
+    
     void Awake()
     {
+
         if (FindObjectsOfType(GetType()).Length > 1) {
             Destroy(gameObject);
         }
@@ -40,10 +41,8 @@ public class SonidoEntreEscenas : MonoBehaviour
 
     private void Start()
     {
-        musicaSlider.value=PlayerPrefs.GetFloat("MusicVolume", musicaSlider.value);
-        efectosSlider.value = PlayerPrefs.GetFloat("SFXVolume", efectosSlider.value);
+        setAudioSliders();
     }
-
 
     public void CambiarVolumenMusica() {
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicaSlider.value) *20);
@@ -58,6 +57,17 @@ public class SonidoEntreEscenas : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MusicVolume", musicaSlider.value);
         PlayerPrefs.SetFloat("SFXVolume", efectosSlider.value);
+    }
+
+    public void setAudioSliders() {
+        efectosSlider = GameObject.Find("VolumenFX").GetComponent<Slider>();
+        musicaSlider = GameObject.Find("VolumenMusica").GetComponent<Slider>();
+
+        efectosSlider.onValueChanged.AddListener(delegate { CambiarVolumenEfectos(); });
+        musicaSlider.onValueChanged.AddListener(delegate { CambiarVolumenMusica(); });
+
+        musicaSlider.value = PlayerPrefs.GetFloat("MusicVolume", musicaSlider.value);
+        efectosSlider.value = PlayerPrefs.GetFloat("SFXVolume", efectosSlider.value);
     }
 
 }
