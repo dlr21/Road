@@ -1333,6 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f73fcf2a5b60e4fab3d784dfb1695e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: {fileID: 2049662065}
   puntuacion: 0
   vivo: 1
   pausado: 0

@@ -25,7 +25,7 @@ public class Mundo : MonoBehaviour
             }
         }//si esta en la pantalla inicial no se puede mover
         else {
-            pl.vivo = false;
+            pl.muere();
         }
     }
 

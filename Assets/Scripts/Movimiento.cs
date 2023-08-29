@@ -148,7 +148,7 @@ public class Movimiento : MonoBehaviour
         {
             if (hit.collider.CompareTag("Agua"))
             {
-                pl.vivo = false;
+                pl.muere();
             }
             return true;
         }

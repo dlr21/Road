@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public int puntuacion;
+    public GameObject options;
 
+    public int puntuacion;
     public bool vivo = true;
     public bool pausado = false;
 
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coche")) {
-            vivo = false;
+            muere();
         }
     }
 
@@ -28,6 +29,11 @@ public class Player : MonoBehaviour
 
     public int getPuntos() {
         return puntuacion;
+    }
+
+    public void muere() {
+        vivo = false;
+        options.GetComponent<OptionsInGame>().Opciones();
     }
 
 }
