@@ -10,6 +10,7 @@ public class Movimiento : MonoBehaviour
     public int lateral;
     public float velocidad;
     private int rango=4;
+    private int maxAtras = 4;
 
     public Vector3 posObjetivo;
     public int carril;
@@ -84,7 +85,7 @@ public class Movimiento : MonoBehaviour
         {
             return;
         }
-        if (posicionZ > carril-2)
+        if (posicionZ > carril- maxAtras)
         {
             posicionZ--;
         }
@@ -148,6 +149,7 @@ public class Movimiento : MonoBehaviour
         {
             if (hit.collider.CompareTag("Agua"))
             {
+                pl.chof();
                 pl.muere();
             }
             return true;

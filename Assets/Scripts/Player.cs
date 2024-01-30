@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 
     public GameObject options;
 
+    public AudioSource audioWater;
+    public AudioSource audioCar;
+
     public int puntuacion;
     public bool vivo = true;
     public bool pausado = false;
@@ -19,6 +22,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coche")) {
+            crash();
             muere();
         }
     }
@@ -33,7 +37,19 @@ public class Player : MonoBehaviour
 
     public void muere() {
         vivo = false;
+        //animacion de muerte y pop up opciones
         options.GetComponent<OptionsInGame>().Opciones();
+    }
+
+    public void chof(){
+        if(vivo)
+        audioWater.Play();
+    }
+
+    public void crash()
+    {
+        if (vivo)
+        audioCar.Play();
     }
 
 }

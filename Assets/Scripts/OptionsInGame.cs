@@ -35,6 +35,11 @@ public class OptionsInGame : MonoBehaviour
         pl.pausado = false;
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void Home()
     {
         SceneManager.LoadScene("SampleScene");
