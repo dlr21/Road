@@ -37,8 +37,12 @@ public class Player : MonoBehaviour
 
     public void muere() {
         vivo = false;
+
         //animacion de muerte y pop up opciones
-        options.GetComponent<OptionsInGame>().Opciones();
+        if (options != null) {
+            options.GetComponent<OptionsInGame>().Opciones(vivo);
+        }
+        
     }
 
     public void chof(){

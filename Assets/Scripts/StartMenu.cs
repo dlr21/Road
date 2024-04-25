@@ -56,7 +56,7 @@ public class StartMenu : MonoBehaviour
 
     public void Exit()
     {
-        //CerrarApp
+        Application.Quit();
     }
 
 }

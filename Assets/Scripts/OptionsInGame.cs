@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class OptionsInGame : MonoBehaviour
 {
-
-    public GameObject optionsMenu;
     public Player pl;
     public GameObject puntos;
+    public GameObject optionsMenu;
+    public GameObject optionsBack;
 
     private void Start()
     {
@@ -19,13 +19,18 @@ public class OptionsInGame : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Opciones();
+            Opciones(true);
         }
     }
 
-    public void Opciones() {
+    public void OpcionesBack(bool vivo) {
+        optionsBack.GetComponent<Button>().interactable=vivo;
+    }
+
+    public void Opciones(bool vivo) {
         pl.pausado = true;
         optionsMenu.SetActive(true);
+        OpcionesBack(vivo);
         puntos.GetComponent<TMPro.TextMeshProUGUI>().text=pl.getPuntos().ToString();
     }
 
