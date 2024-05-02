@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     public void AumentarPuntos() {
         puntuacion += 10;
+        options.GetComponent<OptionsInGame>().puntosUI.GetComponent<TMPro.TextMeshProUGUI>().text = getPuntos().ToString();
     }
 
     public int getPuntos() {

@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class OptionsInGame : MonoBehaviour
 {
     public Player pl;
-    public GameObject puntos;
+    public GameObject puntosFinales;
+    public GameObject puntosUI;
     public GameObject optionsMenu;
     public GameObject optionsBack;
 
@@ -31,7 +32,7 @@ public class OptionsInGame : MonoBehaviour
         pl.pausado = true;
         optionsMenu.SetActive(true);
         OpcionesBack(vivo);
-        puntos.GetComponent<TMPro.TextMeshProUGUI>().text=pl.getPuntos().ToString();
+        puntosFinales.GetComponent<TMPro.TextMeshProUGUI>().text=pl.getPuntos().ToString();
     }
 
     public void backPlay()

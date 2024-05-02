@@ -37,13 +37,19 @@ public class Movimiento : MonoBehaviour
             return;
         }
         ActualizarPosicion();
-        if (Input.GetKeyDown(KeyCode.W)) {
+        Inputs();
+    }
+
+    public void Inputs() {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
             Avanzar();
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             Retroceder();
-        }else if (Input.GetKeyDown(KeyCode.A))
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             Laterales(-1);
         }
@@ -58,7 +64,7 @@ public class Movimiento : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position,posObjetivo, velocidad* Time.deltaTime)  ;
     }
 
-    void Avanzar() {
+    public void Avanzar() {
         
         Rotacion(0);
         if (Mirar())
@@ -78,7 +84,7 @@ public class Movimiento : MonoBehaviour
         Time.timeScale = escalaInicial + incremento * carril;
     }
 
-    void Retroceder()
+    public void Retroceder()
     {
         Rotacion(2);
         if (Mirar())
@@ -91,7 +97,7 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    void Laterales(int cuanto)
+    public void Laterales(int cuanto)
     {
         Rotacion(cuanto);
         if (Mirar()) {
